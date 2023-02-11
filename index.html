@@ -82,13 +82,30 @@
             align-items: center;
         }
         @media screen and (max-width: 670px) {
+            #day , #name{
+            width:90%;
+           
+        }
+        button{
+            width:45%;
+        }
             .s{
                 display: inline;
             }
             .l{
                 display:none;
             }
+             .space{
+               flex-wrap: wrap;
+            } 
             
+        }
+        @media screen and (max-width: 400px) {
+            #day , #name,button{
+            width:90%;
+           
+        }
+        
         }
        
     </style>
@@ -110,10 +127,12 @@
                 </select>
                 
             <input type="text"id="name" name="form" placeholder="Add your new todo"required>
+            
             <button type="button" onclick="myFunction()">
                 <span class="l">ADD</span>
                 <span class="s">+</span></button>
             <button type="button" onclick="MyFunction()"><span class="l">CLEAR</span><span class="s">C</span></button>
+        
         </div>
         <div class="tasks">
             <ul id="ulm">
