@@ -56,7 +56,7 @@
             text-indent: 10%;
         }
         #day , #name,button{
-            margin:10px;
+            margin:6px;
             font-size: 15px;
             padding: 7px;
             border-radius: 5px;
@@ -64,18 +64,31 @@
         }
         #day,button {
            
-            width:20%;
+            width:17.5%;
         }
         button{
             cursor: pointer;
 
+
+        }
+        .s{
+            display: none;
         }
         #name{
-            width:60%;
+            width:55%;
         }
         .space{
             display: flex;
             align-items: center;
+        }
+        @media screen and (max-width: 670px) {
+            .s{
+                display: inline;
+            }
+            .l{
+                display:none;
+            }
+            
         }
        
     </style>
@@ -97,15 +110,17 @@
                 </select>
                 
             <input type="text"id="name" name="form" placeholder="Add your new todo"required>
-            <button type="button" onclick="myFunction()">ADD</button>
+            <button type="button" onclick="myFunction()">
+                <span class="l">ADD</span>
+                <span class="s">+</span></button>
+            <button type="button" onclick="MyFunction()"><span class="l">CLEAR</span><span class="s">C</span></button>
         </div>
         <div class="tasks">
-            <ul>
-                 <!-- <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ad.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ad.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ad.
-
-                 </li>  -->
+            <ul id="ulm">
+                 <!-- <li>ADD TASKS HERE
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti est maxime cumque expedita aperiam iste atque vel delectus nesciunt harum sapiente similique vitae voluptate reprehenderit sit, perferendis molestias sed consequatur. Optio, facere omnis hic quo quasi nisi consequuntur eius minima sint error in, dolore vel suscipit ullam totam similique amet atque veniam, accusamus velit accusantium et aliquam fuga. Iure, accusantium.
+                 </li> -->
+                 
             </ul>
         </div>
     </div>
@@ -142,6 +157,12 @@
          document.getElementById('name').value="";
         
          }
+        function MyFunction(){
+          let ul=document.getElementById('ulm');
+          
+          ul.innerHTML="";
+
+        }
     </script>
 </body>
 </html>
